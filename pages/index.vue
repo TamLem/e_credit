@@ -1,91 +1,39 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-express
-      </h1>
-      <div>
-        {{ test }}
-        <div class="links">
-          <a
-            href="/users"
-            class="button--green"
-          >
-            Users List
-          </a>
-        </div>
-      </div>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+<div class="container">
+	<navbar />
+	<b-jumbotron header="BootstrapVue" text-variant="white" lead="Bootstrap v4 Components for Vue.js 2">
+		<p>For more information visit website</p>
+		<b-button variant="primary" href="#">More Info</b-button>
+ 	</b-jumbotron>
+	<section class="info-banner">
+
+	</section>
+	<section class="info-banner">
+
+	</section>
+</div>
+
 </template>
 
 <script>
+import navbar from '../components/navbar.vue'
 export default {
-  async asyncData ({ $http }) {
-    const test = await $http.$get('/api/test')
-    return {
-      test
-    }
-  }
+  components: { navbar },
+
 }
 </script>
 
-<style scoped>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style>
+	body {
+		background-color: #f8f7f2;
+	}
+	.jumbotron {
+		background-image: url("../assets/hero_bg.png");
+		height: 50vh;
+	}
+	.info-banner {
+		height: 25vh;
+		margin-bottom: 20px;
+		background: linear-gradient(90deg, rgb(129, 63, 214), rgb(61, 17, 82));
+	}
 </style>

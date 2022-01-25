@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxt/http": "latest",
+    "bootstrap-vue": "^2.21.2",
     "express": "latest",
     "nuxt": "latest"
   },
