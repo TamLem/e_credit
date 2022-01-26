@@ -4,6 +4,7 @@
 	<b-jumbotron header="BootstrapVue" text-variant="white" lead="Bootstrap v4 Components for Vue.js 2">
 		<p>For more information visit website</p>
 		<b-button variant="primary" href="#">More Info</b-button>
+		<main-form />
  	</b-jumbotron>
 	<section class="info-banner">
 
@@ -16,9 +17,10 @@
 </template>
 
 <script>
+import MainForm from '../components/mainForm.vue'
 import navbar from '../components/navbar.vue'
 export default {
-  components: { navbar },
+  components: { navbar, MainForm },
 
 }
 </script>
