@@ -1,7 +1,7 @@
 <template>
   <div class="sticky-top bg-white">
     <b-navbar toggleable="lg" type="light" class="">
-      <b-navbar-brand href="#">Home</b-navbar-brand>
+      <NuxtLink to="/"> <b-navbar-brand>Home</b-navbar-brand></NuxtLink>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
