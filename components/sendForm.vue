@@ -15,6 +15,9 @@
 			class="inputs"
 		></b-form-input>
 	</div>
+  <div class="mt-4 mb-1" style="text-align:center;">
+    <span><b>Select amount to send</b></span>
+  </div>
     <div class="list-header">
       <span>They get</span>
       <span>You pay</span>
@@ -84,7 +87,7 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 0 3%;
-  padding-top: 4%;
+  padding-top: 0%;
   margin-bottom: -10px;
   text-align: end;
   color: #999999;
