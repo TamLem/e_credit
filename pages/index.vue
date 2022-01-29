@@ -1,15 +1,23 @@
 <template>
-<div class="container">
+<div class="container-fluid p-0">
 	<navbar />
-	<b-jumbotron header="BootstrapVue" text-variant="white" lead="Bootstrap v4 Components for Vue.js 2">
-		<p>For more information visit website</p>
-		<b-button variant="primary" href="#">More Info</b-button>
-		<main-form />
- 	</b-jumbotron>
-	<section class="info-banner">
+	<div class="section section1">
+		<div class="jb-left px-20">
+			<h3>Send Mobile Credit to Ethiopia</h3>
+			<p></p>
+			<div class="partners">
+				<h4>Secure Payment</h4>
+				<img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">
+			</div>
+		</div>
+		<div class="right">
+			<send-form/>
 
+		</div>
+ 	</div>
+	<section class="section2">
 	</section>
-	<section class="info-banner">
+	<section class="section3">
 
 	</section>
 </div>
@@ -19,8 +27,9 @@
 <script>
 import MainForm from '../components/mainForm.vue'
 import navbar from '../components/navbar.vue'
+import SendForm from '../components/sendForm.vue'
 export default {
-  components: { navbar, MainForm },
+  components: { navbar, MainForm, SendForm },
 
 }
 </script>
@@ -29,13 +38,36 @@ export default {
 	body {
 		background-color: #f8f7f2;
 	}
-	.jumbotron {
+	.section1 {
 		background-image: url("../assets/hero_bg.png");
-		height: 50vh;
+		height: 75vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5vw;
 	}
-	.info-banner {
-		height: 25vh;
+	.jb-left {
+		justify-content: left;
+		color: white;
+	}
+	.section2 {
+		height: 50vh;
+		width: 100vw;
+		justify-content: center;
+		padding: 20px;
+		background: linear-gradient(90deg, rgb(40,167,68) 13%, rgb(31,126,53));
+	}
+	.section3 {
+		height: 35vh;
 		margin-bottom: 20px;
-		background: linear-gradient(90deg, rgb(129, 63, 214), rgb(61, 17, 82));
+	}
+	.inputs{
+		display: inline;
+		height: 3em;
+	}
+	input[type = text]:focus {
+	border: none;
+	box-shadow: none;
 	}
 </style>

@@ -63,10 +63,9 @@ export default {
   color: aquamarine;
   width: 350px;
   height: auto;
-  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: right;
   right: 15%;
   border-radius: 10px;
   overflow: hidden;
