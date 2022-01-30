@@ -4,7 +4,7 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-  target: 'server',
+  target: 'static',
 
   /*
   ** Headers of the page
@@ -19,6 +19,13 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: "https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD",
+        "data-sdk-integration-source": "button-factory",
+        async: true,
+      },
     ]
   },
 
@@ -57,7 +64,6 @@ export default {
     '@nuxt/http',
     'bootstrap-vue/nuxt'
   ],
-
   /*
   ** Server Middleware
   */

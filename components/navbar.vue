@@ -2,7 +2,7 @@
   <div class="sticky-top bg-white">
     <b-navbar toggleable="lg" type="light" class="">
       <NuxtLink to="/"> <b-navbar-brand>Home</b-navbar-brand></NuxtLink>
-
+      <NuxtLink to="/order"> <b-navbar-brand>Order</b-navbar-brand></NuxtLink>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>

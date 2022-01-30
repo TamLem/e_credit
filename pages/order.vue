@@ -5,28 +5,26 @@
         <h2>Select payment method</h2>
       </div>
       <div class="select_method mt-3 pb-4 mb-1" style="">
-        <div id="card_select" v-on:click='paymentMethod = "card"'><h4>Card payment</h4></div>
-        <div id="paypal_select" v-on:click='paymentMethod = "paypal"'><h4>PayPal</h4></div>
+        <div id="card_select" v-on:click="paymentMethod = 'card'">
+          <h4>Card payment</h4>
+        </div>
+        <div id="paypal_select" v-on:click="paymentMethod = 'paypal'">
+          <h4>PayPal</h4>
+        </div>
       </div>
       <br />
-      <div v-if="paymentMethod == 'card'" id="payment-card">
-        <label for="name" class="float-left" ><b>Card number</b></label>
-			<b-form-input
-				id="name"
-				type="Number"
-				size=lg
-				placeholder="Enter card number..."
-			>
-				
-			</b-form-input>
+      <div v-show="paymentMethod == 'card'" id="payment-card">
+          <keep-alive>
+            <paypal />
+          </keep-alive>
       </div>
-      <div v-if="paymentMethod == 'paypal'" id="payment-paypal">
-		<img
-			src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg"
-			border="0"
-			alt="PayPal Acceptance Mark"
-		/>
-	  </div>
+      <div v-show="paymentMethod == 'paypal'" id="payment-paypal">
+        <img
+          src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg"
+          border="0"
+          alt="PayPal Acceptance Mark"
+        />
+      </div>
     </div>
     <div class="order_summary">
       <div style="border-bottom: 1px solid #ccc" class="pb-3">
@@ -65,20 +63,13 @@
 </template>
 
 <script>
+import  paypal from "../components/paypal.vue";
+
 export default {
-  //
+  components: {paypal},
   data() {
     return {
       paymentMethod: "card",
-    };
-  },
-  head() {
-    return {
-      script: [
-        {
-          src: "https://js.stripe.com/v3/",
-        },
-      ],
     };
   },
 };
@@ -90,7 +81,6 @@ label {
 }
 
 .container_order {
-  background: #f7f7f7;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap-reverse;
@@ -133,7 +123,7 @@ label {
   text-align: center;
   padding: 2.5%;
   margin-left: 1%;
-  height: auto;
+  margin-bottom: auto;
 }
 .push_apart {
   display: flex;
